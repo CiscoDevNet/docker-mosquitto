@@ -47,5 +47,11 @@ RUN buildDeps='git build-base libressl-dev libwebsockets-dev c-ares-dev util-lin
 
 ADD mosquitto.conf /etc/mosquitto/mosquitto.conf
 
+#IOx Labels
+LABEL "cisco.cpuarch"="x86_64" \
+      "cisco.resources.profile"="c1.small" \
+      "cisco.resources.disk"="20" \
+      "cisco.resources.network.0.interface-name"="eth0"
+
 ENTRYPOINT ["/run.sh"]
 CMD ["mosquitto"]
